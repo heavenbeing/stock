@@ -187,6 +187,10 @@ def get_hist_data_cache(code, date_start, date_end):
     else:
         print("######### get data, write cache #########", code, date_start, date_end)
         stock = ts.get_hist_data(code, start=date_start, end=date_end)
+        # ts.set_token('111')
+        # pro = ts.pro_api()
+        # # code = code+".sh"
+        # stock = pro.daily(ts_code=code, start_date=date_start, end_date=date_end)
         if stock is None:
             return None
         stock = stock.sort_index(0)  # 将数据按照日期排序下。
