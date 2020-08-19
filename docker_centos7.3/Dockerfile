@@ -40,7 +40,9 @@ RUN yum update && yum install -y gcc make axel python3-dev default-libmysqlclien
     cd ta-lib && ./configure && make && make install  && cd /tmp && rm -rf * && \
     pip3 install TA-Lib  && pip3 install jupyter && \
     yum --purge remove -y gcc make axel python3-dev default-libmysqlclient-dev libxml2-dev && \
-    rm -rf /root/.cache/* && yum clean packages && yum clean headers -y
+    rm -rf /root/.cache/* && \
+    yum clean packages && \
+    yum clean headers -y
 
 # /usr/local/lib/python3.6/site-packages/pandas/
 # 1.解决 pandas 数据插入问题。直接修改数据库驱动 sqlalchemy
