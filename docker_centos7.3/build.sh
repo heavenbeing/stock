@@ -17,7 +17,7 @@ DOCKER_TAG=pythonstock/pythonstock:base-${NOW_MONTH}
 
 echo " docker build -f Dockerfile -t ${DOCKER_TAG} ."
 docker build -f Dockerfile -t ${DOCKER_TAG} .
-docker save -o ${dir}/images/pythonstock.tar
+docker save -o ${dir}/../images/pythonstock.tar
 echo "#################################################################"
 echo " docker push ${DOCKER_TAG} "
 
