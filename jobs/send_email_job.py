@@ -22,13 +22,15 @@ response = requests.get('http://ip.cip.cc')
 
 print('ip address:')
 print(response.text)
-email_content = "Ip address:" + response.text + " " + "send by python"
+email_content = "Ip address:" + response.text + " " \
+                + "stock address:" + "http://" + response.text + ":9999" \
+                + "send by python"
 msg = MIMEText(email_content, 'plain', 'utf-8')
 
 # 邮件头信息
 msg['From'] = Header(from_addr)
 msg['To'] = Header(to_addr)
-msg['Subject'] = Header('python test')
+msg['Subject'] = Header('路由器动态ip')
 
 # 开启发信服务，这里使用的是加密传输
 server = smtplib.SMTP_SSL(smtp_server)
