@@ -23,6 +23,10 @@ echo "###################"$DATETIME"###################" >> /data/logs/daily.${D
 #使用股票指标预测。
 /usr/local/bin/python3 /data/stock/jobs/guess_indicators_daily_job.py >> /data/logs/daily.${DATE}.log
 
+echo "###################"$DATETIME"###################" >> /data/logs/daily.${DATE}.log
+# 增加发送stock 系统地址邮件
+/usr/local/bin/python3 /data/stock/jobs/send_email_job.py >> /data/logs/daily.${DATE}.log
+
 #清除前3天数据。
 DATE_20=`date -d '-20 days' +%Y-%m-%d`
 MONTH_20=`date -d '-20 days' +%Y-%m`
