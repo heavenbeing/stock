@@ -24,8 +24,8 @@ print('ip address:')
 print(response.text)
 email_content = "Ip address:" + response.text + " " \
                 + "stock address:" + "http://" + response.text.replace('\n', '').replace('\r', '') + ":9999" \
-                + "\r" \
-                + "\rsend by python"
+                + " \r" \
+                + " \rsend by python"
 msg = MIMEText(email_content, 'plain', 'utf-8')
 
 # 邮件头信息
