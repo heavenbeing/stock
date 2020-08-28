@@ -12,7 +12,7 @@ from_addr = 'heavenbeing@foxmail.com'
 password = 'vxmovadvviffbgbj'
 
 # 收信方邮箱
-to_addr = 'heavenbeing@outlook.com'
+to_addr = '1257358834@qq.com,heavenbeing@outlook.com,603331215@qq.com'
 
 # 发信服务器
 smtp_server = 'smtp.qq.com'
@@ -39,6 +39,6 @@ server.connect(smtp_server, 465)
 # 登录发信邮箱
 server.login(from_addr, password)
 # 发送邮件
-server.sendmail(from_addr, to_addr, msg.as_string())
+server.sendmail(from_addr, to_addr.split(','), msg.as_string())
 # 关闭服务器
 server.quit()
