@@ -23,8 +23,9 @@ response = requests.get('http://ip.cip.cc')
 print('ip address:')
 print(response.text)
 email_content = "Ip address:" + response.text + " " \
-                + "stock address:" + "http://" + response.text + ":9999" \
-                + "send by python"
+                + "stock address:" + "http://" + response.text.replace('\n', '').replace('\r', '') + ":9999" \
+                + "\r" \
+                + "\rsend by python"
 msg = MIMEText(email_content, 'plain', 'utf-8')
 
 # 邮件头信息
