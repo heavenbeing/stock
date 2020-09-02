@@ -7,7 +7,7 @@ FROM pythonstockleeks/pythonstockleeks:base-2020-09
 
 WORKDIR /data
 
-#add cron sesrvice.
+#add cron service.
 #每分钟，每小时1分钟，每天1点1分，每月1号执行
 RUN mkdir -p /etc/cron.minutely && mkdir -p /etc/cron.hourly && mkdir -p /etc/cron.monthly && \
     echo "SHELL=/bin/sh \n\
