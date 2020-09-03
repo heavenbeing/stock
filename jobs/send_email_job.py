@@ -22,10 +22,15 @@ response = requests.get('http://ip.cip.cc')
 
 print('ip address:')
 print(response.text)
+
+# /stock/data?table_name=guess_indicators_lite_buy_daily
+# /stock/data?table_name=guess_indicators_lite_sell_daily
 email_content = "Ip address:" + response.text + " " \
                 + "stock address:" + "http://" + response.text.replace('\n', '').replace('\r', '') + ":9999" \
-                + " \r" \
-                + " \rsend by python"
+                + "买入猜想:" + "http://" + response.text.replace('\n', '').replace('\r', '') + ":9999" + "/stock/data?table_name=guess_indicators_lite_buy_daily" \
+                + "卖出猜想:" + "http://" + response.text.replace('\n', '').replace('\r', '') + ":9999" + "/stock/data?table_name=guess_indicators_lite_sell_daily" \
+                + " \r\n" \
+                + " \r\nsend by python"
 msg = MIMEText(email_content, 'plain', 'utf-8')
 
 # 邮件头信息
