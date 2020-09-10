@@ -22,3 +22,8 @@ printenv | grep -v "no_proxy" >> /etc/environment
 
 #启动cron服务。在前台
 /usr/sbin/cron -f
+
+# 重启crontab,防止cron有多个进程
+#ps -a | grep cron >> /data/logs/run_init.log
+#service cron restart
+#ps -a | grep cron >> /data/logs/run_init.log
