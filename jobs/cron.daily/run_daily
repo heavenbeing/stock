@@ -16,9 +16,10 @@ DATETIMEH=`date +%H`
 echo $DATETIMEH >> /data/logs/daily.${DATE}.log
 
 # 防止脚本执行两次 fix早上6:25莫名启动bug
-time=`date +%H:%M:%S`
+# sh命令无法识别"[[]]"表达式
+time=`date +%H`
 echo $time >> /data/logs/daily.${DATE}.log
-if [[ "$time" > "00:00:01" ]] && [[ "$time" < "15:30:00" ]]
+if [ "$time" -gt 00 ] && [ "$time" -lt 15 ]
 then
 echo "当前时间还没到下午" >> /data/logs/daily.${DATE}.log
 else
