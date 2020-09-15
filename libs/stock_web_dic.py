@@ -142,7 +142,7 @@ STOCK_WEB_DATA_LIST.append(
     StockWebData(
         mode="query",
         type="每日数据猜想",
-        name="每日股票指标买入猜想",
+        name="每日股票指标买入猜想(超买)",
         table_name="guess_indicators_lite_buy_daily",
         columns=["date", "code", "name", "changepercent", "trade", "open", "high", "low", "settlement", "volume",
                  "turnoverratio", "amount", "per", "pb", "mktcap", "nmc",
@@ -161,7 +161,7 @@ STOCK_WEB_DATA_LIST.append(
     StockWebData(
         mode="query",
         type="每日数据猜想",
-        name="每日股票指标卖出猜想",
+        name="每日股票指标卖出猜想(超卖)",
         table_name="guess_indicators_lite_sell_daily",
         columns=["date", "code", "name", "changepercent", "trade", "open", "high", "low", "settlement", "volume",
                  "turnoverratio", "amount", "per", "pb", "mktcap", "nmc",
